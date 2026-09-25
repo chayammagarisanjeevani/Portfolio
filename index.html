@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanjeevani | Web Developer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="gradient-bg">
+    <nav>
+      <div class="logo">Chayammagari Sanjeevani Kumari</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-left">
+        <img src="Sanjeevani photo.jpeg" alt="Sanjeevani" class="profile-img" />
+      </div>
+      <div class="hero-right">
+        <h2>Hi, I'm Sanjeevani 👋</h2>
+        <p>Full Stack Web Developer</p>
+        <p>Java | SQL | HTML | CSS | GitHub</p>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a Electronics Communcation graduate from SVIT with CGPA 8.01,
+        completed internship at Tap Academy as a Full Stack Web Developer. I'm
+        passionate about creating responsive web apps and improving my backend &
+        frontend skills daily.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill">
+          <img src="images/java.png" />
+          <p>Java</p>
+        </div>
+        <div class="skill">
+          <img src="images/sql.png" />
+          <p>SQL</p>
+        </div>
+        <div class="skill">
+          <img src="images/html.png" />
+          <p>HTML</p>
+        </div>
+        <div class="skill">
+          <img src="images/css.png" />
+          <p>CSS</p>
+        </div>
+        <div class="skill">
+          <img src="images/github.png" />
+          <p>Git & GitHub</p>
+        </div>
+        <div class="skill">
+          <img src="images/javascript.png" />
+          <p>JavaScript</p>
+        </div>
+        <div class="skill">
+          <img src="images/servlets.png" />
+          <p>Servlets</p>
+        </div>
+        <div class="skill">
+          <img src="images/hibernate.png" />
+          <p>Hibernate</p>
+        </div>
+        <div class="skill">
+          <img src="images/spring.png" />
+          <p>Spring</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-gallery">
+        <a
+          href="https://github.com/chayammagarisanjeevani/HTML_project"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="images/HTML_project.png" alt="Playlist Project" />
+          <p>🎵 Favourite HTML_project Webpage</p>
+        </a>
+        <a
+          href="https://github.com/chayammagarisanjeevani/Foodie_Hub"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="images/technologies.png" alt="Technology List" />
+          <p>📋Foodie_Hub Project</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        Email:
+        <a href="mailto:chayammagarisanjeevani@gmail.com"
+          >chayammagarisanjeevani@gmail.com</a
+        >
+      </p>
+      <p>
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/chayammagarisanjeevani/"
+          target="_blank"
+          >chayammagarisanjeevani</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/chayammagarisanjeevani" target="_blank"
+          >chayammagarisanjeevani</a
+        >
+      </p>
+      <p>
+        <a href="resume.pdf" download class="resume-btn"
+          >📄 Download My Resume</a
+        >
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Sanjeevani C. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav a");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("visible", entry.isIntersecting);
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href").slice(1) === entry.target.id,
+              );
+            });
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+    </script>
+  </body>
+</html>
